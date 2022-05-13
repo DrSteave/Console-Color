@@ -8,33 +8,41 @@ namespace ConsoleApp3
         {
             Console.WriteLine("Напишите цвет с маленькой буквы");
 
-            switch (Console.ReadLine())
+            int k = 0;
+            do
             {
-                case "red":
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Ваш цвет красный!");
-                    return;
+                Console.WriteLine(k);
 
-                case "green":
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Ваш цвет зеленый!");
-                    return;
+                switch(Console.ReadLine())
+                {
+                    case "red":
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Ваш цвет красный!");
+                        break;
 
-                case "cyan":
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Ваш цвет голубой!");
-                    break;
+                    case "green":
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Ваш цвет зеленый!");
+                        break;
 
+                    case "cyan":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Ваш цвет голубой!");
+                        break;
 
-                default:
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Ваш цвет хз какой. Вы -- идиот.");
-                    return;
+                    case "stop":
+                        Console.WriteLine("Цикл остановлен");
+                        return;
 
-            }
-
-
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Ваш цвет хз какой. Вы -- идиот.");
+                        continue;
+                        
+                }
+                    k++;
+                
+            } while (k < 3);
         }
     }
 }
